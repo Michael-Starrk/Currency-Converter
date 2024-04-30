@@ -1,24 +1,31 @@
 package entities;
 
+import textTerminal.textRegistration;
+
 public class User {
 
     private String name;
-    private String lastName;
     private String email;
     private String password;
-    private String birthdate;
+    private String cpf;
     private String countryOfOrigin;
 
     public User(){
     }
-    public User(String name, String lastName, String email,
-                String password, String birthdate, String countryOfOrigin) {
+    public User(String name, String email, String cpf, String password, String countryOfOrigin) {
         this.name = name;
-        this.lastName = lastName;
         this.email = email;
+        this.cpf = cpf;
         this.password = password;
-        this.birthdate = birthdate;
         this.countryOfOrigin = countryOfOrigin;
+    }
+
+    public User(textRegistration text){
+        this.name = text.getName();
+        this.email = text.getEmail();
+        this.cpf = text.getCpf();
+        this.password = text.getPassword();
+        this.countryOfOrigin = text.getCountryOfOrigin();
     }
 
     public String getName() {
@@ -27,14 +34,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -53,12 +52,11 @@ public class User {
         this.password = password;
     }
 
-    public String getBirthdate() {
-        return birthdate;
+    public String getCpf() {
+        return cpf;
     }
-
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getCountryOfOrigin() {
